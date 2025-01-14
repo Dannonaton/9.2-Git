@@ -1,8 +1,7 @@
-from typing import Union
 from datetime import datetime
-from masks import get_mask_account
-from masks import get_mask_card_number
+from typing import Union
 
+from masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(type_and_number: Union[str]) -> str:
@@ -33,5 +32,6 @@ def get_date(user_date: Union[str]) -> str:
     date_format = datetime.strptime(user_date, "%Y-%m-%dT%H:%M:%S.%f")
     new_date = date_format.strftime("%d.%m.%Y")
     return new_date
+
 
 print(get_date("2024-03-11T02:26:18.671407"))
