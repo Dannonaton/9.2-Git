@@ -24,6 +24,8 @@ def mask_account_card(type_and_number: Union[str]) -> Union[str]:
         return f"{text_result} {get_mask_card_number(digit_result)}"
 
 
+print(mask_account_card(input()))
+
 def get_date(user_date: Union[str]) -> str:
     """Функция получения даты в определенном формате и возвращения в формате ДД.ММ.ГГГГ
     с использованием Метода strptime() и strftime()"""
