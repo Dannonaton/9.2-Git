@@ -1,20 +1,16 @@
-new_dictionary = []
+from typing import Any, Dict, List, Union
 
+new_data = []
 
-def filter_by_state(dictionary: list, state: str = 'EXECUTED') -> list:
+def filter_by_state(data: List[Dict[str, str]], state: str = 'EXECUTED') -> List[Dict[str, Union[str, None]]]:
     """ Функция, для сортировки по ключу """
-    for i in dictionary:
+    for i in data:
         if i["state"] == state:
-            new_dictionary.append(i)
-    return new_dictionary
+            new_data.append(i)
+    return new_data
 
 
-def sort_by_date(sort_time: list, reverse: bool = True) -> list:
+def sort_by_date(data: List[Dict[str, Any]], reverse: bool = True) -> List[Dict[str, Any]]:
     """ Функция, для сортировки списка по дате """
-    return sorted(sort_time, key=lambda x: x["date"], reverse=reverse)
+    return sorted(data, key=lambda x: x["date"], reverse=reverse)
 
-
-print(filter_by_state([{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
-                       {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
-                       {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
-                       {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}]))
